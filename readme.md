@@ -3,10 +3,11 @@ Form
 
 [![Build Status](https://travis-ci.org/TypiCMS/form.svg?branch=master)](https://travis-ci.org/TypiCMS/form)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/form/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/form?branch=master)
-
-This package was originally created by [Adam Wathan](https://github.com/adamwathan).
+[![StyleCI](https://styleci.io/repos/132716028/shield?branch=master)](https://styleci.io/repos/132716028)
 
 Build HTML form with an intuitive syntax.
+
+This package was originally created by [Adam Wathan](https://github.com/adamwathan).
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
