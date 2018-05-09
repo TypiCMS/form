@@ -4,7 +4,9 @@ Form
 [![Build Status](https://travis-ci.org/TypiCMS/form.svg?branch=master)](https://travis-ci.org/TypiCMS/form)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/form/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/form?branch=master)
 
-Boring name for a boring package. Builds form HTML with a fluent-ish, hopefully intuitive syntax.
+This package was originally created by [Adam Wathan](https://github.com/adamwathan).
+
+Build HTML form with an intuitive syntax.
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
