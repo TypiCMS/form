@@ -5,6 +5,10 @@
         {
             "name": "Adam Wathan",
             "email": "adam.wathan@gmail.com"
+        },
+        {
+            "name": "Samuel De Backer",
+            "email": "sdebacker@gmail.com"
         }
     ],
     "license": "MIT",
