@@ -1,10 +1,8 @@
-> **Important: This package is not actively maintained.** If you use it on any of your projects and are interested in taking over the package, shoot me an email at adam at adamwathan dot me.
-
 Form
 ========
 
-[![Code Climate](https://codeclimate.com/github/adamwathan/form/badges/gpa.svg)](https://codeclimate.com/github/adamwathan/form)
-[![Coverage Status](https://coveralls.io/repos/adamwathan/form/badge.svg?branch=master)](https://coveralls.io/r/adamwathan/form?branch=master)
+[![Build Status](https://travis-ci.org/TypiCMS/form.svg?branch=master)](https://travis-ci.org/TypiCMS/form)
+[![Coverage Status](https://coveralls.io/repos/github/TypiCMS/form/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/form?branch=master)
 
 Boring name for a boring package. Builds form HTML with a fluent-ish, hopefully intuitive syntax.
 
@@ -21,7 +19,7 @@ Boring name for a boring package. Builds form HTML with a fluent-ish, hopefully 
 You can install this package via Composer by running this command in your terminal in the root of your project:
 
 ```bash
-composer require adamwathan/form
+composer require typicms/form
 ```
 
 ### Laravel
@@ -35,7 +33,7 @@ To do so, just update the `providers` array in your `config/app.php`:
 ```php
 'providers' => [
         //...
-        'AdamWathan\Form\FormServiceProvider'
+        'TypiCMS\Form\FormServiceProvider'
     ],
 ```
 
@@ -44,7 +42,7 @@ You can also choose to use the Facade by adding an alias in `config/app.php`:
 ```php
 'aliases' => [
         //...
-        'Form' => 'AdamWathan\Form\Facades\Form',
+        'Form' => 'TypiCMS\Form\Facades\Form',
     ],
 ```
 
@@ -69,7 +67,7 @@ You can also choose to use the Facade by adding an alias in `config/app.php`:
 First, instantiate a FormBuilder...
 
 ```php
-$builder = new AdamWathan\Form\FormBuilder;
+$builder = new TypiCMS\Form\FormBuilder;
 ```
 
 Next, use the FormBuilder to build an element. For example:
