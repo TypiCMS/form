@@ -29,5 +29,12 @@
     "autoload-dev": {
         "classmap": ["tests/"]
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TypiCMS\\Form\\FormServiceProvider"
+            ]
+        }
+    }
 }
