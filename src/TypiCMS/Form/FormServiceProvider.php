@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Form;
 
+use Illuminate\Support\ServiceProvider;
 use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 use TypiCMS\Form\OldInput\IlluminateOldInputProvider;
-use Illuminate\Support\ServiceProvider;
 
 class FormServiceProvider extends ServiceProvider
 {
@@ -34,7 +34,7 @@ class FormServiceProvider extends ServiceProvider
     protected function registerFormBuilder()
     {
         $this->app->singleton('adamwathan.form', function ($app) {
-            $formBuilder = new FormBuilder;
+            $formBuilder = new FormBuilder();
             $formBuilder->setErrorStore($app['adamwathan.form.errorstore']);
             $formBuilder->setOldInputProvider($app['adamwathan.form.oldinput']);
             $formBuilder->setToken($app['session.store']->token());

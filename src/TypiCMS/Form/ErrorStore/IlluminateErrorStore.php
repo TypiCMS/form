@@ -15,7 +15,7 @@ class IlluminateErrorStore implements ErrorStoreInterface
 
     public function hasError($key)
     {
-        if (! $this->hasErrors()) {
+        if (!$this->hasErrors()) {
             return false;
         }
 
@@ -26,8 +26,8 @@ class IlluminateErrorStore implements ErrorStoreInterface
 
     public function getError($key)
     {
-        if (! $this->hasError($key)) {
-            return null;
+        if (!$this->hasError($key)) {
+            return;
         }
 
         $key = $this->transformKey($key);

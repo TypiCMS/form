@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\DateTimeLocal;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\DateTimeLocal;
 
 class DateTimeLocalTest extends TestCase
 {

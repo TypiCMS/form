@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Checkbox;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Checkbox;
 
 class CheckboxTest extends TestCase
 {

@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Email;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Email;
 
 class EmailTest extends TestCase
 {

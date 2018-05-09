@@ -50,6 +50,7 @@ class Select extends FormControl
             if (is_array($label)) {
                 return $this->renderOptGroup($value, $label);
             }
+
             return $this->renderOption($value, $label);
         }, $values, $labels);
 

@@ -1,13 +1,13 @@
 <?php
 
-use TypiCMS\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\FormBuilder;
 
 class FormBuilderTest extends TestCase
 {
     public function setUp()
     {
-        $this->form = new FormBuilder;
+        $this->form = new FormBuilder();
     }
 
     public function tearDown()
@@ -17,7 +17,7 @@ class FormBuilderTest extends TestCase
 
     public function testFormBuilderCanBeCreated()
     {
-        $formBuilder = new FormBuilder;
+        $formBuilder = new FormBuilder();
     }
 
     public function testFormOpen()

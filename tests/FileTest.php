@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\File;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\File;
 
 class FileTest extends TestCase
 {

@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Password;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Password;
 
 class PasswordTest extends TestCase
 {

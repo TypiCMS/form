@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\TextArea;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\TextArea;
 
 class TextAreaTest extends TestCase
 {
@@ -18,7 +18,7 @@ class TextAreaTest extends TestCase
 
     protected function elementRegExp($attributes)
     {
-        return '/\A<textarea .*?' . $attributes . '( .*?|)><\/textarea>\z/';
+        return '/\A<textarea .*?'.$attributes.'( .*?|)><\/textarea>\z/';
     }
 
     public function testRenderBasicTextArea()

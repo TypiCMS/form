@@ -1,13 +1,13 @@
 <?php
 
-use TypiCMS\Form\FormBuilder;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\FormBuilder;
 
 class OldInputTest extends TestCase
 {
     public function setUp()
     {
-        $this->form = new FormBuilder;
+        $this->form = new FormBuilder();
     }
 
     public function tearDown()
@@ -108,7 +108,7 @@ class OldInputTest extends TestCase
 
         $this->form->setOldInputProvider($oldInput);
 
-        $expected  = '<select name="favourite_foods[]" multiple="multiple">';
+        $expected = '<select name="favourite_foods[]" multiple="multiple">';
         $expected .= '<option value="fish" selected>Fish</option>';
         $expected .= '<option value="tofu">Tofu</option>';
         $expected .= '<option value="chips" selected>Chips</option>';

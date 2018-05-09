@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Hidden;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Hidden;
 
 class HiddenTest extends TestCase
 {
