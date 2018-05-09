@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\RadioButton;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\RadioButton;
 
 class RadioButtonTest extends TestCase
 {

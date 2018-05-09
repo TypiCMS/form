@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Label;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Label;
 
 class LabelTest extends TestCase
 {

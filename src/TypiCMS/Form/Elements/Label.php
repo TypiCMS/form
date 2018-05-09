@@ -25,7 +25,7 @@ class Label extends Element
 
         $tags[] = $this->renderElement();
 
-        if (! $this->labelBefore) {
+        if (!$this->labelBefore) {
             $tags[] = $this->label;
         }
 
@@ -59,7 +59,7 @@ class Label extends Element
 
     protected function renderElement()
     {
-        if (! $this->element) {
+        if (!$this->element) {
             return '';
         }
 

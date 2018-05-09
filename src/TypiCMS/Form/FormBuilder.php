@@ -47,7 +47,7 @@ class FormBuilder
 
     public function open()
     {
-        $open = new FormOpen;
+        $open = new FormOpen();
 
         if ($this->hasToken()) {
             $open->token($this->csrfToken);
@@ -213,7 +213,7 @@ class FormBuilder
 
     public function hasError($name)
     {
-        if (! isset($this->errorStore)) {
+        if (!isset($this->errorStore)) {
             return false;
         }
 
@@ -222,11 +222,11 @@ class FormBuilder
 
     public function getError($name, $format = null)
     {
-        if (! isset($this->errorStore)) {
-            return null;
+        if (!isset($this->errorStore)) {
+            return;
         }
 
-        if (! $this->hasError($name)) {
+        if (!$this->hasError($name)) {
             return '';
         }
 
@@ -253,13 +253,11 @@ class FormBuilder
         if ($this->hasBoundData()) {
             return $this->getBoundValue($name, null);
         }
-
-        return null;
     }
 
     protected function hasOldInput()
     {
-        if (! isset($this->oldInput)) {
+        if (!isset($this->oldInput)) {
             return false;
         }
 
@@ -289,18 +287,18 @@ class FormBuilder
     public function selectMonth($name)
     {
         $options = [
-            "1" => "January",
-            "2" => "February",
-            "3" => "March",
-            "4" => "April",
-            "5" => "May",
-            "6" => "June",
-            "7" => "July",
-            "8" => "August",
-            "9" => "September",
-            "10" => "October",
-            "11" => "November",
-            "12" => "December",
+            '1'  => 'January',
+            '2'  => 'February',
+            '3'  => 'March',
+            '4'  => 'April',
+            '5'  => 'May',
+            '6'  => 'June',
+            '7'  => 'July',
+            '8'  => 'August',
+            '9'  => 'September',
+            '10' => 'October',
+            '11' => 'November',
+            '12' => 'December',
         ];
 
         return $this->select($name, $options);

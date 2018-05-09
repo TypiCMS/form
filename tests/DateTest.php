@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Date;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Date;
 
 class DateTest extends TestCase
 {

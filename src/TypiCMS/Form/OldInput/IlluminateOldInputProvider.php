@@ -15,7 +15,7 @@ class IlluminateOldInputProvider implements OldInputInterface
 
     public function hasOldInput()
     {
-        return ($this->session->get('_old_input')) ? true : false ;
+        return ($this->session->get('_old_input')) ? true : false;
     }
 
     public function getOldInput($key)

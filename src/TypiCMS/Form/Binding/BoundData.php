@@ -49,7 +49,7 @@ class BoundData
     {
         $key = array_shift($keyParts);
 
-        if (! isset($target[$key])) {
+        if (!isset($target[$key])) {
             return $default;
         }
 
@@ -60,7 +60,7 @@ class BoundData
     {
         $key = array_shift($keyParts);
 
-        if (! (property_exists($target, $key) || method_exists($target, '__get'))) {
+        if (!(property_exists($target, $key) || method_exists($target, '__get'))) {
             return $default;
         }
 

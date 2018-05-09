@@ -1,7 +1,7 @@
 <?php
 
-use TypiCMS\Form\Elements\Button;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\Elements\Button;
 
 class ButtonTest extends TestCase
 {

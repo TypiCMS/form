@@ -19,7 +19,7 @@ class DateTimeLocal extends Text
 
     public function defaultValue($value)
     {
-        if (! $this->hasValue()) {
+        if (!$this->hasValue()) {
             if ($value instanceof \DateTime) {
                 $value = $value->format('Y-m-d\TH:i');
             }

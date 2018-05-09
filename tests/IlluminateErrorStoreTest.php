@@ -1,8 +1,8 @@
 <?php
 
-use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 use Illuminate\Support\MessageBag;
 use PHPUnit\Framework\TestCase;
+use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 
 class IlluminateErrorStoreTest extends TestCase
 {

@@ -47,7 +47,7 @@ abstract class Element
 
     public function clear($attribute)
     {
-        if (! isset($this->attributes[$attribute])) {
+        if (!isset($this->attributes[$attribute])) {
             return $this;
         }
 
@@ -59,7 +59,7 @@ abstract class Element
     public function addClass($class)
     {
         if (isset($this->attributes['class'])) {
-            $class = $this->attributes['class'] . ' ' . $class;
+            $class = $this->attributes['class'].' '.$class;
         }
 
         $this->setAttribute('class', $class);
@@ -69,13 +69,14 @@ abstract class Element
 
     public function removeClass($class)
     {
-        if (! isset($this->attributes['class'])) {
+        if (!isset($this->attributes['class'])) {
             return $this;
         }
 
         $class = trim(str_replace($class, '', $this->attributes['class']));
         if ($class == '') {
             $this->removeAttribute('class');
+
             return $this;
         }
 
