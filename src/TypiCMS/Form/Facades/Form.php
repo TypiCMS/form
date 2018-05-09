@@ -8,6 +8,6 @@ class Form extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'adamwathan.form';
+        return 'typicms.form';
     }
 }
