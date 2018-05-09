@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\TextArea;
+use TypiCMS\Form\Elements\TextArea;
+use PHPUnit\Framework\TestCase;
 
-class TextAreaTest extends PHPUnit_Framework_TestCase
+class TextAreaTest extends TestCase
 {
     use InputContractTest;
 

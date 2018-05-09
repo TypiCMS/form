@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\DateTimeLocal;
+use TypiCMS\Form\Elements\DateTimeLocal;
+use PHPUnit\Framework\TestCase;
 
-class DateTimeLocalTest extends PHPUnit_Framework_TestCase
+class DateTimeLocalTest extends TestCase
 {
     use InputContractTest;
 

@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Text;
+use TypiCMS\Form\Elements\Text;
+use PHPUnit\Framework\TestCase;
 
-class TextTest extends PHPUnit_Framework_TestCase
+class TextTest extends TestCase
 {
     use TextSubclassContractTest;
 

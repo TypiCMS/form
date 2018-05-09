@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\File;
+use TypiCMS\Form\Elements\File;
+use PHPUnit\Framework\TestCase;
 
-class FileTest extends PHPUnit_Framework_TestCase
+class FileTest extends TestCase
 {
     use InputContractTest;
 

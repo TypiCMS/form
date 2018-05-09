@@ -22,8 +22,8 @@
         <whitelist>
             <directory suffix=".php">./src</directory>
             <exclude>
-                <file>./src/AdamWathan/Form/FormServiceProvider.php</file>
-                <file>./src/AdamWathan/Form/Facades/Form.php</file>
+                <file>./src/TypiCMS/Form/FormServiceProvider.php</file>
+                <file>./src/TypiCMS/Form/Facades/Form.php</file>
             </exclude>
         </whitelist>
     </filter>

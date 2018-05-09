@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Button;
+use TypiCMS\Form\Elements\Button;
+use PHPUnit\Framework\TestCase;
 
-class ButtonTest extends PHPUnit_Framework_TestCase
+class ButtonTest extends TestCase
 {
     public function testButtonCanBeCreated()
     {

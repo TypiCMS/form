@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Checkbox;
+use TypiCMS\Form\Elements\Checkbox;
+use PHPUnit\Framework\TestCase;
 
-class CheckboxTest extends PHPUnit_Framework_TestCase
+class CheckboxTest extends TestCase
 {
     use InputContractTest;
 

@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Password;
+use TypiCMS\Form\Elements\Password;
+use PHPUnit\Framework\TestCase;
 
-class PasswordTest extends PHPUnit_Framework_TestCase
+class PasswordTest extends TestCase
 {
     use TextSubclassContractTest;
 

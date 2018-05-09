@@ -1,9 +1,10 @@
 <?php
 
-use AdamWathan\Form\ErrorStore\IlluminateErrorStore;
+use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 use Illuminate\Support\MessageBag;
+use PHPUnit\Framework\TestCase;
 
-class IlluminateErrorStoreTest extends PHPUnit_Framework_TestCase
+class IlluminateErrorStoreTest extends TestCase
 {
     public function test_it_converts_array_keys_to_dot_notation()
     {

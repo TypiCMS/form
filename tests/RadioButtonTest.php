@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\RadioButton;
+use TypiCMS\Form\Elements\RadioButton;
+use PHPUnit\Framework\TestCase;
 
-class RadioButtonTest extends PHPUnit_Framework_TestCase
+class RadioButtonTest extends TestCase
 {
     use InputContractTest;
 

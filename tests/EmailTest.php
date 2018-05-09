@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Email;
+use TypiCMS\Form\Elements\Email;
+use PHPUnit\Framework\TestCase;
 
-class EmailTest extends PHPUnit_Framework_TestCase
+class EmailTest extends TestCase
 {
     use TextSubclassContractTest;
 

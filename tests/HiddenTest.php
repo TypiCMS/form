@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Hidden;
+use TypiCMS\Form\Elements\Hidden;
+use PHPUnit\Framework\TestCase;
 
-class HiddenTest extends PHPUnit_Framework_TestCase
+class HiddenTest extends TestCase
 {
     use InputContractTest;
 

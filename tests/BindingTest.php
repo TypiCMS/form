@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\FormBuilder;
+use TypiCMS\Form\FormBuilder;
+use PHPUnit\Framework\TestCase;
 
-class BindingTest extends PHPUnit_Framework_TestCase
+class BindingTest extends TestCase
 {
     public function setUp()
     {
@@ -382,7 +383,7 @@ class BindingTest extends PHPUnit_Framework_TestCase
 
     public function testOldInputTakesPrecedenceOverBinding()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('first_name')->andReturn('Steve');
         $this->form->setOldInputProvider($oldInput);

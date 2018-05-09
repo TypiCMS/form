@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\Elements\Select;
+use TypiCMS\Form\Elements\Select;
+use PHPUnit\Framework\TestCase;
 
-class SelectTest extends PHPUnit_Framework_TestCase
+class SelectTest extends TestCase
 {
     use InputContractTest;
 

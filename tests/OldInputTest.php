@@ -1,8 +1,9 @@
 <?php
 
-use AdamWathan\Form\FormBuilder;
+use TypiCMS\Form\FormBuilder;
+use PHPUnit\Framework\TestCase;
 
-class OldInputTest extends PHPUnit_Framework_TestCase
+class OldInputTest extends TestCase
 {
     public function setUp()
     {
@@ -16,7 +17,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderTextWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('title')->andReturn('Hello "quotes"');
 
@@ -29,7 +30,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderCheckboxWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('terms')->andReturn('agree');
 
@@ -46,7 +47,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderCheckboxArrayWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('favourite_foods[]')->andReturn(['fish', 'chips']);
 
@@ -67,7 +68,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderRadioWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('color')->andReturn('green');
 
@@ -84,7 +85,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderSelectWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('color')->andReturn('blue');
 
@@ -101,7 +102,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderMultipleSelectWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('favourite_foods')->andReturn(['fish', 'chips']);
 
@@ -118,7 +119,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderTextAreaWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('bio')->andReturn('This is my bio');
 
@@ -131,7 +132,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderDateWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('date_of_birth')->andReturn('1999-04-06');
 
@@ -144,7 +145,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderDateTimeLocalWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('date_and_time_of_birth')->andReturn('1985-05-06T16:39');
 
@@ -157,7 +158,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderEmailWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('email')->andReturn('example@example.com');
 
@@ -170,7 +171,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderHiddenWithOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('secret')->andReturn('my-secret-string');
 
@@ -183,7 +184,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderingTextAreaWithOldInputEscapesDangerousCharacters()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('bio')->andReturn('<script>alert("xss!");</script>');
 
@@ -196,7 +197,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testRenderCheckboxAgainstBinaryOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('agree_to_terms')->andReturn('1');
 
@@ -209,7 +210,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testOldInputOnCheckboxTakesPrecedenceOverDefaultToChecked()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('published')->andReturn('0');
 
@@ -222,7 +223,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testOldInputOnCheckboxTakesPrecedenceOverDefaultToUnchecked()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('published')->andReturn('1');
 
@@ -235,7 +236,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testOldInputOnRadioTakesPrecedenceOverDefaultToChecked()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('published')->andReturn('0');
 
@@ -248,7 +249,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testOldInputOnRadioTakesPrecedenceOverDefaultToUnchecked()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('published')->andReturn('1');
 
@@ -261,7 +262,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testExplicitUncheckOnCheckboxTakesPrecedenceOverOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('terms')->andReturn('agree');
 
@@ -274,7 +275,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testExplicitUncheckOnRadioTakesPrecedenceOverOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('color')->andReturn('green');
 
@@ -287,7 +288,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testExplicitCheckOnCheckboxTakesPrecedenceOverOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('terms')->andReturn('agree');
 
@@ -300,7 +301,7 @@ class OldInputTest extends PHPUnit_Framework_TestCase
 
     public function testExplicitCheckOnRadioTakesPrecedenceOverOldInput()
     {
-        $oldInput = Mockery::mock('AdamWathan\Form\OldInput\OldInputInterface');
+        $oldInput = Mockery::mock('TypiCMS\Form\OldInput\OldInputInterface');
         $oldInput->shouldReceive('hasOldInput')->andReturn(true);
         $oldInput->shouldReceive('getOldInput')->with('color')->andReturn('green');
 
