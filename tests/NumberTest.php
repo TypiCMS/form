@@ -16,4 +16,40 @@ class NumberTest extends TestCase
     {
         return 'number';
     }
+
+    public function testDefaultValue()
+    {
+        $number = new Number('number');
+        $number->defaultValue(0);
+
+        $expected = '<input type="number" name="number" value="0">';
+        $this->assertSame($expected, $number->render());
+    }
+
+    public function testMinValue()
+    {
+        $number = new Number('number');
+        $number->min(5);
+
+        $expected = '<input type="number" name="number" min="5">';
+        $this->assertSame($expected, $number->render());
+    }
+
+    public function testMaxValue()
+    {
+        $number = new Number('number');
+        $number->max(10);
+
+        $expected = '<input type="number" name="number" max="10">';
+        $this->assertSame($expected, $number->render());
+    }
+
+    public function testStepValue()
+    {
+        $number = new Number('number');
+        $number->step(1);
+
+        $expected = '<input type="number" name="number" step="1">';
+        $this->assertSame($expected, $number->render());
+    }
 }
