@@ -12,6 +12,7 @@ use TypiCMS\Form\Elements\File;
 use TypiCMS\Form\Elements\FormOpen;
 use TypiCMS\Form\Elements\Hidden;
 use TypiCMS\Form\Elements\Label;
+use TypiCMS\Form\Elements\Number;
 use TypiCMS\Form\Elements\Password;
 use TypiCMS\Form\Elements\RadioButton;
 use TypiCMS\Form\Elements\Select;
@@ -77,6 +78,17 @@ class FormBuilder
         }
 
         return $text;
+    }
+
+    public function number($name)
+    {
+        $number = new Number($name);
+
+        if (!is_null($value = $this->getValueFor($name))) {
+            $number->value($value);
+        }
+
+        return $number;
     }
 
     public function date($name)
