@@ -52,4 +52,13 @@ class NumberTest extends TestCase
         $expected = '<input type="number" name="number" step="1">';
         $this->assertSame($expected, $number->render());
     }
+
+    public function testPlaceholderValue()
+    {
+        $number = new Number('number');
+        $number->placeholder('Number');
+
+        $expected = '<input type="number" name="number" placeholder="Number">';
+        $this->assertSame($expected, $number->render());
+    }
 }
