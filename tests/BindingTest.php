@@ -50,6 +50,16 @@ class BindingTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
+    public function testBindNumber()
+    {
+        $object = $this->getStubObject();
+        $this->form->bind($object);
+
+        $expected = '<input type="number" name="number" value="0">';
+        $result = (string) $this->form->number('number');
+        $this->assertEquals($expected, $result);
+    }
+
     public function testBindDate()
     {
         $object = $this->getStubObject();

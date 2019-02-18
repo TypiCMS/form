@@ -45,6 +45,17 @@ class FormBuilderTest extends TestCase
         $this->assertEquals($expected, $result);
     }
 
+    public function testNumber()
+    {
+        $expected = '<input type="number" name="number">';
+        $result = (string) $this->form->number('number');
+        $this->assertEquals($expected, $result);
+
+        $expected = '<input type="number" name="age">';
+        $result = (string) $this->form->number('age');
+        $this->assertEquals($expected, $result);
+    }
+
     public function testPassword()
     {
         $expected = '<input type="password" name="password">';
