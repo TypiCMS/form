@@ -2,14 +2,13 @@
 
 namespace TypiCMS\Form;
 
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 use TypiCMS\Form\OldInput\IlluminateOldInputProvider;
 
-class FormServiceProvider extends ServiceProvider
+class FormServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    protected $defer = false;
-
     public function register()
     {
         $this->registerErrorStore();
@@ -43,6 +42,11 @@ class FormServiceProvider extends ServiceProvider
         });
     }
 
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
     public function provides()
     {
         return ['typicms.form'];
