@@ -11,14 +11,14 @@ class Text extends Input
         'type' => 'text',
     ];
 
-    public function placeholder($placeholder): self
+    public function placeholder(string $placeholder): self
     {
         $this->setAttribute('placeholder', $placeholder);
 
         return $this;
     }
 
-    public function defaultValue($value): self
+    public function defaultValue(string $value): self
     {
         if (!$this->hasValue()) {
             $this->setValue($value);

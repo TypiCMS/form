@@ -14,7 +14,7 @@ class BoundData
         $this->data = $data;
     }
 
-    public function get($name, $default = null)
+    public function get(string $name, $default = null)
     {
         return $this->dotGet($this->transformKey($name), $default);
     }
@@ -70,7 +70,7 @@ class BoundData
         return $this->dataGet($target->{$key}, $keyParts, $default);
     }
 
-    protected function transformKey($key)
+    protected function transformKey(string $key)
     {
         return str_replace(['[]', '[', ']'], ['', '.', ''], $key);
     }

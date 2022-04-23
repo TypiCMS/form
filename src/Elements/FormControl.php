@@ -4,17 +4,17 @@ namespace TypiCMS\Form\Elements;
 
 abstract class FormControl extends Element
 {
-    public function __construct($name)
+    public function __construct(?string $name)
     {
         $this->setName($name);
     }
 
-    protected function setName($name): void
+    protected function setName(?string $name): void
     {
         $this->setAttribute('name', $name);
     }
 
-    public function required($conditional = true): self
+    public function required(bool $conditional = true): self
     {
         $this->setBooleanAttribute('required', $conditional);
 
@@ -28,14 +28,14 @@ abstract class FormControl extends Element
         return $this;
     }
 
-    public function disable($conditional = true): self
+    public function disable(bool $conditional = true): self
     {
         $this->setBooleanAttribute('disabled', $conditional);
 
         return $this;
     }
 
-    public function readonly($conditional = true): self
+    public function readonly(bool $conditional = true): self
     {
         $this->setBooleanAttribute('readonly', $conditional);
 

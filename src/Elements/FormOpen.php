@@ -84,7 +84,7 @@ class FormOpen extends Element
         return $this;
     }
 
-    protected function setHiddenMethod($method): self
+    protected function setHiddenMethod(string $method): self
     {
         $this->setMethod('POST');
         $this->hiddenMethod = new Hidden('_method');
@@ -93,21 +93,21 @@ class FormOpen extends Element
         return $this;
     }
 
-    public function setMethod($method): self
+    public function setMethod(string $method): self
     {
         $this->setAttribute('method', $method);
 
         return $this;
     }
 
-    public function action($action): self
+    public function action(string $action): self
     {
         $this->setAttribute('action', $action);
 
         return $this;
     }
 
-    public function encodingType($type): self
+    public function encodingType(string $type): self
     {
         $this->setAttribute('enctype', $type);
 

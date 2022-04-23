@@ -4,9 +4,12 @@ namespace TypiCMS\Form\Elements;
 
 abstract class Element
 {
+    /**
+     * @var array
+     */
     protected $attributes = [];
 
-    protected function setAttribute($attribute, $value = null)
+    protected function setAttribute(string $attribute, mixed $value = null): void
     {
         if (is_null($value)) {
             return;
@@ -15,17 +18,17 @@ abstract class Element
         $this->attributes[$attribute] = $value;
     }
 
-    protected function removeAttribute($attribute)
+    protected function removeAttribute(string $attribute): void
     {
         unset($this->attributes[$attribute]);
     }
 
-    public function getAttribute($attribute)
+    public function getAttribute(string $attribute): string
     {
         return $this->attributes[$attribute];
     }
 
-    public function data($attribute, $value = null): self
+    public function data(array|string $attribute, mixed $value = null): self
     {
         if (is_array($attribute)) {
             foreach ($attribute as $key => $val) {
@@ -38,14 +41,14 @@ abstract class Element
         return $this;
     }
 
-    public function attribute($attribute, $value): self
+    public function attribute(string $attribute, mixed $value): self
     {
         $this->setAttribute($attribute, $value);
 
         return $this;
     }
 
-    public function clear($attribute): self
+    public function clear(string $attribute): self
     {
         if (!isset($this->attributes[$attribute])) {
             return $this;
@@ -56,7 +59,7 @@ abstract class Element
         return $this;
     }
 
-    public function addClass($class): self
+    public function addClass(string $class): self
     {
         if (isset($this->attributes['class'])) {
             $class = $this->attributes['class'].' '.$class;
@@ -67,7 +70,7 @@ abstract class Element
         return $this;
     }
 
-    public function removeClass($class): self
+    public function removeClass(string $class): self
     {
         if (!isset($this->attributes['class'])) {
             return $this;
@@ -85,19 +88,19 @@ abstract class Element
         return $this;
     }
 
-    public function id($id): self
+    public function id(string $id): self
     {
         $this->setId($id);
 
         return $this;
     }
 
-    protected function setId($id): void
+    protected function setId(string $id): void
     {
         $this->setAttribute('id', $id);
     }
 
-    abstract public function render();
+    abstract public function render(): string;
 
     public function __toString(): string
     {
@@ -113,7 +116,7 @@ abstract class Element
         }, $attributes, $values));
     }
 
-    protected function splitKeysAndValues($array): array
+    protected function splitKeysAndValues(array $array): array
     {
         // Disgusting crap because people might have passed a collection
         $keys = [];
@@ -127,7 +130,7 @@ abstract class Element
         return [$keys, $values];
     }
 
-    protected function setBooleanAttribute($attribute, $value): void
+    protected function setBooleanAttribute(string $attribute, bool $value): void
     {
         if ($value) {
             $this->setAttribute($attribute, $attribute);

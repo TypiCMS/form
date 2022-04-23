@@ -11,35 +11,35 @@ class Number extends Input
         'type' => 'number',
     ];
 
-    public function placeholder($placeholder): self
+    public function placeholder(string $placeholder): self
     {
         $this->setAttribute('placeholder', $placeholder);
 
         return $this;
     }
 
-    public function max($max): self
+    public function max(int $max): self
     {
         $this->setAttribute('max', $max);
 
         return $this;
     }
 
-    public function min($min): self
+    public function min(int $min): self
     {
         $this->setAttribute('min', $min);
 
         return $this;
     }
 
-    public function step($step): self
+    public function step(float $step): self
     {
         $this->setAttribute('step', $step);
 
         return $this;
     }
 
-    public function defaultValue($value): self
+    public function defaultValue(string $value): self
     {
         if (!$this->hasValue()) {
             $this->setValue($value);

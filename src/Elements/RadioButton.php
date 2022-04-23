@@ -11,7 +11,7 @@ class RadioButton extends Checkbox
         'type' => 'radio',
     ];
 
-    public function __construct($name, $value = null)
+    public function __construct(string $name, ?string $value = null)
     {
         parent::__construct($name);
 

@@ -11,7 +11,7 @@ class Date extends Text
         'type' => 'date',
     ];
 
-    public function value($value): Input
+    public function value(mixed $value): Input
     {
         if ($value instanceof \DateTime) {
             $value = $value->format('Y-m-d');
@@ -20,7 +20,7 @@ class Date extends Text
         return parent::value($value);
     }
 
-    public function defaultValue($value): self
+    public function defaultValue(mixed $value): self
     {
         if (!$this->hasValue()) {
             if ($value instanceof \DateTime) {

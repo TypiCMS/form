@@ -9,14 +9,14 @@ abstract class Input extends FormControl
         return sprintf('<input%s>', $this->renderAttributes());
     }
 
-    public function value($value): self
+    public function value(mixed $value): self
     {
         $this->setValue($value);
 
         return $this;
     }
 
-    protected function setValue($value): self
+    protected function setValue(mixed $value): self
     {
         $this->setAttribute('value', $value);
 

@@ -14,7 +14,7 @@ class TextArea extends FormControl
     ];
 
     /**
-     * @var string
+     * @var ?string
      */
     protected $value;
 
@@ -27,35 +27,35 @@ class TextArea extends FormControl
         ]);
     }
 
-    public function rows($rows): self
+    public function rows(int $rows): self
     {
         $this->setAttribute('rows', $rows);
 
         return $this;
     }
 
-    public function cols($cols): self
+    public function cols(int $cols): self
     {
         $this->setAttribute('cols', $cols);
 
         return $this;
     }
 
-    public function value($value): self
+    public function value(string $value): self
     {
         $this->value = $value;
 
         return $this;
     }
 
-    public function placeholder($placeholder): self
+    public function placeholder(string $placeholder): self
     {
         $this->setAttribute('placeholder', $placeholder);
 
         return $this;
     }
 
-    public function defaultValue($value): self
+    public function defaultValue(string $value): self
     {
         if (!$this->hasValue()) {
             $this->value($value);

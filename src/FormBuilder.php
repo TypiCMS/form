@@ -23,14 +23,23 @@ use TypiCMS\Form\OldInput\OldInputInterface;
 
 class FormBuilder
 {
+    /**
+     * @var ?OldInputInterface
+     */
     protected $oldInput;
 
+    /**
+     * @var ?ErrorStoreInterface
+     */
     protected $errorStore;
 
+    /**
+     * @var ?string
+     */
     protected $csrfToken;
 
     /**
-     * @var \TypiCMS\Form\Binding\BoundData
+     * @var ?\TypiCMS\Form\Binding\BoundData
      */
     protected $boundData;
 
@@ -154,7 +163,7 @@ class FormBuilder
         return new Password($name);
     }
 
-    public function checkbox(string $name, $value = 1): Checkbox
+    public function checkbox(string $name, int|string $value = 1): Checkbox
     {
         $checkbox = new Checkbox($name, $value);
 
@@ -164,7 +173,7 @@ class FormBuilder
         return $checkbox;
     }
 
-    public function radio(string $name, $value = null): RadioButton
+    public function radio(string $name, int|string $value = null): RadioButton
     {
         $radio = new RadioButton($name, $value);
 
@@ -174,7 +183,7 @@ class FormBuilder
         return $radio;
     }
 
-    public function button(string $value, $name = null): Button
+    public function button(string $value, string $name = null): Button
     {
         return new Button($value, $name);
     }
@@ -226,7 +235,7 @@ class FormBuilder
         return $token;
     }
 
-    public function hasError($name): bool
+    public function hasError(string $name): bool
     {
         if (!isset($this->errorStore)) {
             return false;
@@ -254,7 +263,7 @@ class FormBuilder
         return $message;
     }
 
-    public function bind($data): void
+    public function bind(mixed $data): void
     {
         $this->boundData = new BoundData($data);
     }
@@ -279,7 +288,7 @@ class FormBuilder
         return $this->oldInput->hasOldInput();
     }
 
-    protected function getOldInput($name): array|string
+    protected function getOldInput(string $name): array|string
     {
         return $this->oldInput->getOldInput($name);
     }
@@ -289,7 +298,7 @@ class FormBuilder
         return isset($this->boundData);
     }
 
-    protected function getBoundValue(string $name, $default): mixed
+    protected function getBoundValue(string $name, ?string $default): mixed
     {
         return $this->boundData->get($name, $default);
     }
@@ -299,7 +308,7 @@ class FormBuilder
         $this->boundData = null;
     }
 
-    public function selectMonth($name)
+    public function selectMonth(string $name): Select
     {
         $options = [
             '1' => 'January',

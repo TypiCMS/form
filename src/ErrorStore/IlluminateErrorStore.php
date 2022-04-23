@@ -16,7 +16,7 @@ class IlluminateErrorStore implements ErrorStoreInterface
         $this->session = $session;
     }
 
-    public function hasError($key): bool
+    public function hasError(string $key): bool
     {
         if (!$this->hasErrors()) {
             return false;
@@ -27,7 +27,7 @@ class IlluminateErrorStore implements ErrorStoreInterface
         return $this->getErrors()->has($key);
     }
 
-    public function getError($key): ?string
+    public function getError(string $key): ?string
     {
         if (!$this->hasError($key)) {
             return null;
@@ -48,7 +48,7 @@ class IlluminateErrorStore implements ErrorStoreInterface
         return $this->hasErrors() ? $this->session->get('errors') : null;
     }
 
-    protected function transformKey($key): string
+    protected function transformKey(string $key): string
     {
         return str_replace(['.', '[]', '[', ']'], ['_', '', '.', ''], $key);
     }

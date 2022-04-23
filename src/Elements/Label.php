@@ -5,7 +5,7 @@ namespace TypiCMS\Form\Elements;
 class Label extends Element
 {
     /**
-     * @var Element
+     * @var ?Element
      */
     protected $element;
 
@@ -43,7 +43,7 @@ class Label extends Element
         return implode($tags);
     }
 
-    public function forId($name): self
+    public function forId(string $name): self
     {
         $this->setAttribute('for', $name);
 

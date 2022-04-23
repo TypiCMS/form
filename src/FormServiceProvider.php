@@ -9,28 +9,28 @@ use TypiCMS\Form\OldInput\IlluminateOldInputProvider;
 
 class FormServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->registerErrorStore();
         $this->registerOldInput();
         $this->registerFormBuilder();
     }
 
-    protected function registerErrorStore()
+    protected function registerErrorStore(): void
     {
         $this->app->singleton('typicms.form.errorstore', function ($app) {
             return new IlluminateErrorStore($app['session.store']);
         });
     }
 
-    protected function registerOldInput()
+    protected function registerOldInput(): void
     {
         $this->app->singleton('typicms.form.oldinput', function ($app) {
             return new IlluminateOldInputProvider($app['session.store']);
         });
     }
 
-    protected function registerFormBuilder()
+    protected function registerFormBuilder(): void
     {
         $this->app->singleton('typicms.form', function ($app) {
             $formBuilder = new FormBuilder();
@@ -44,10 +44,8 @@ class FormServiceProvider extends ServiceProvider implements DeferrableProvider
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return ['typicms.form'];
     }

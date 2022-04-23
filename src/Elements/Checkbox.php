@@ -11,23 +11,29 @@ class Checkbox extends Input
         'type' => 'checkbox',
     ];
 
+    /**
+     * @var ?bool
+     */
     protected $checked;
 
+    /**
+     * @var mixed
+     */
     protected $oldValue;
 
-    public function __construct($name, $value = 1)
+    public function __construct(string $name, mixed $value = 1)
     {
         parent::__construct($name);
 
         $this->setValue($value);
     }
 
-    public function setOldValue($oldValue)
+    public function setOldValue(mixed $oldValue): void
     {
         $this->oldValue = $oldValue;
     }
 
-    public function unsetOldValue()
+    public function unsetOldValue(): void
     {
         $this->oldValue = null;
     }
@@ -50,7 +56,7 @@ class Checkbox extends Input
         return $this;
     }
 
-    public function defaultCheckedState($state): self
+    public function defaultCheckedState(bool $state): self
     {
         $state ? $this->defaultToChecked() : $this->defaultToUnchecked();
 
@@ -73,7 +79,7 @@ class Checkbox extends Input
         return $this;
     }
 
-    protected function setChecked($checked = true)
+    protected function setChecked(bool $checked = true): void
     {
         $this->checked = $checked;
         $this->removeAttribute('checked');

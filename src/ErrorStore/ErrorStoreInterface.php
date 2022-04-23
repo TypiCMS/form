@@ -4,7 +4,7 @@ namespace TypiCMS\Form\ErrorStore;
 
 interface ErrorStoreInterface
 {
-    public function hasError($key);
+    public function hasError(string $key): bool;
 
-    public function getError($key);
+    public function getError(string $key): ?string;
 }

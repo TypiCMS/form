@@ -4,7 +4,7 @@ namespace TypiCMS\Form\OldInput;
 
 interface OldInputInterface
 {
-    public function hasOldInput();
+    public function hasOldInput(): bool;
 
-    public function getOldInput($key);
+    public function getOldInput(string $key): array|string;
 }

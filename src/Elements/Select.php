@@ -10,7 +10,7 @@ class Select extends FormControl
     protected $options;
 
     /**
-     * @var bool
+     * @var ?bool
      */
     protected $selected;
 
