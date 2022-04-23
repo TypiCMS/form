@@ -20,17 +20,18 @@
         "phpunit/phpunit": "^9.5.10",
         "mockery/mockery": "^1.4.4",
         "php-coveralls/php-coveralls": "~2.5.2",
-        "nunomaduro/larastan": "^2.0"
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^7.4"
     },
     "autoload": {
-        "psr-0": {
-            "TypiCMS\\Form": "src/"
+        "psr-4": {
+            "TypiCMS\\Form\\": "src/"
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/"
-        ]
+        "psr-4": {
+            "TypiCMS\\Form\\Tests\\": "tests/"
+        }
     },
     "minimum-stability": "stable",
     "extra": {

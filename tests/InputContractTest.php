@@ -1,5 +1,7 @@
 <?php
 
+namespace TypiCMS\Form\Tests;
+
 trait InputContractTest
 {
     abstract protected function newTestSubjectInstance($name);

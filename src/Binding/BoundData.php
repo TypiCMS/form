@@ -4,9 +4,12 @@ namespace TypiCMS\Form\Binding;
 
 class BoundData
 {
+    /**
+     * @var mixed
+     */
     protected $data;
 
-    public function __construct($data)
+    public function __construct(mixed $data)
     {
         $this->data = $data;
     }

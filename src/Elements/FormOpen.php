@@ -13,12 +13,12 @@ class FormOpen extends Element
     ];
 
     /**
-     * @var Hidden
+     * @var ?Hidden
      */
     protected $token;
 
     /**
-     * @var Hidden
+     * @var ?Hidden
      */
     protected $hiddenMethod;
 

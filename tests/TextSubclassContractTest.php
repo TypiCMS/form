@@ -1,5 +1,7 @@
 <?php
 
+namespace TypiCMS\Form\Tests;
+
 trait TextSubclassContractTest
 {
     use InputContractTest;

@@ -11,7 +11,7 @@ class DateTimeLocal extends Text
         'type' => 'datetime-local',
     ];
 
-    public function value($value): self
+    public function value($value): Input
     {
         if ($value instanceof \DateTime) {
             $value = $value->format('Y-m-d\TH:i');

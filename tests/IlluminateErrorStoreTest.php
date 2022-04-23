@@ -1,6 +1,9 @@
 <?php
 
+namespace TypiCMS\Form\Tests;
+
 use Illuminate\Support\MessageBag;
+use Mockery;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 

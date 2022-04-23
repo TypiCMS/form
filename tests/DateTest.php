@@ -1,5 +1,8 @@
 <?php
 
+namespace TypiCMS\Form\Tests;
+
+use DateTime;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Date;
 

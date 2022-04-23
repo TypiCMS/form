@@ -1,5 +1,7 @@
 <?php
 
+namespace TypiCMS\Form\Tests;
+
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\TextArea;
 
