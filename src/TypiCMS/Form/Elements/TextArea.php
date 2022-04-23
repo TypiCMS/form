@@ -4,15 +4,21 @@ namespace TypiCMS\Form\Elements;
 
 class TextArea extends FormControl
 {
+    /**
+     * @var array
+     */
     protected $attributes = [
         'name' => '',
         'rows' => 10,
         'cols' => 50,
     ];
 
+    /**
+     * @var string
+     */
     protected $value;
 
-    public function render()
+    public function render(): string
     {
         return implode([
             sprintf('<textarea%s>', $this->renderAttributes()),
@@ -21,35 +27,35 @@ class TextArea extends FormControl
         ]);
     }
 
-    public function rows($rows)
+    public function rows($rows): self
     {
         $this->setAttribute('rows', $rows);
 
         return $this;
     }
 
-    public function cols($cols)
+    public function cols($cols): self
     {
         $this->setAttribute('cols', $cols);
 
         return $this;
     }
 
-    public function value($value)
+    public function value($value): self
     {
         $this->value = $value;
 
         return $this;
     }
 
-    public function placeholder($placeholder)
+    public function placeholder($placeholder): self
     {
         $this->setAttribute('placeholder', $placeholder);
 
         return $this;
     }
 
-    public function defaultValue($value)
+    public function defaultValue($value): self
     {
         if (!$this->hasValue()) {
             $this->value($value);
@@ -58,7 +64,7 @@ class TextArea extends FormControl
         return $this;
     }
 
-    protected function hasValue()
+    protected function hasValue(): bool
     {
         return isset($this->value);
     }

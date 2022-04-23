@@ -4,11 +4,14 @@ namespace TypiCMS\Form\Elements;
 
 class Date extends Text
 {
+    /**
+     * @var array
+     */
     protected $attributes = [
         'type' => 'date',
     ];
 
-    public function value($value)
+    public function value($value): self
     {
         if ($value instanceof \DateTime) {
             $value = $value->format('Y-m-d');
@@ -17,7 +20,7 @@ class Date extends Text
         return parent::value($value);
     }
 
-    public function defaultValue($value)
+    public function defaultValue($value): self
     {
         if (!$this->hasValue()) {
             if ($value instanceof \DateTime) {

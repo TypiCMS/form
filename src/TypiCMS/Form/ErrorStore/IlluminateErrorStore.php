@@ -6,6 +6,9 @@ use Illuminate\Session\Store as Session;
 
 class IlluminateErrorStore implements ErrorStoreInterface
 {
+    /**
+     * @var Session
+     */
     private $session;
 
     public function __construct(Session $session)
@@ -13,7 +16,7 @@ class IlluminateErrorStore implements ErrorStoreInterface
         $this->session = $session;
     }
 
-    public function hasError($key)
+    public function hasError($key): bool
     {
         if (!$this->hasErrors()) {
             return false;
@@ -24,10 +27,10 @@ class IlluminateErrorStore implements ErrorStoreInterface
         return $this->getErrors()->has($key);
     }
 
-    public function getError($key)
+    public function getError($key): ?string
     {
         if (!$this->hasError($key)) {
-            return;
+            return null;
         }
 
         $key = $this->transformKey($key);
@@ -35,17 +38,17 @@ class IlluminateErrorStore implements ErrorStoreInterface
         return $this->getErrors()->first($key);
     }
 
-    protected function hasErrors()
+    protected function hasErrors(): bool
     {
         return $this->session->has('errors');
     }
 
-    protected function getErrors()
+    protected function getErrors(): mixed
     {
         return $this->hasErrors() ? $this->session->get('errors') : null;
     }
 
-    protected function transformKey($key)
+    protected function transformKey($key): string
     {
         return str_replace(['.', '[]', '[', ']'], ['_', '', '.', ''], $key);
     }

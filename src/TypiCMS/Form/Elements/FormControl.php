@@ -9,40 +9,40 @@ abstract class FormControl extends Element
         $this->setName($name);
     }
 
-    protected function setName($name)
+    protected function setName($name): void
     {
         $this->setAttribute('name', $name);
     }
 
-    public function required($conditional = true)
+    public function required($conditional = true): self
     {
         $this->setBooleanAttribute('required', $conditional);
 
         return $this;
     }
 
-    public function optional()
+    public function optional(): self
     {
         $this->removeAttribute('required');
 
         return $this;
     }
 
-    public function disable($conditional = true)
+    public function disable($conditional = true): self
     {
         $this->setBooleanAttribute('disabled', $conditional);
 
         return $this;
     }
 
-    public function readonly($conditional = true)
+    public function readonly($conditional = true): self
     {
         $this->setBooleanAttribute('readonly', $conditional);
 
         return $this;
     }
 
-    public function enable()
+    public function enable(): self
     {
         $this->removeAttribute('disabled');
         $this->removeAttribute('readonly');
@@ -50,14 +50,14 @@ abstract class FormControl extends Element
         return $this;
     }
 
-    public function autofocus()
+    public function autofocus(): self
     {
         $this->setAttribute('autofocus', 'autofocus');
 
         return $this;
     }
 
-    public function unfocus()
+    public function unfocus(): self
     {
         $this->removeAttribute('autofocus');
 

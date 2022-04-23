@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Number;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class NumberTest extends TestCase
 {
     use TextSubclassContractTest;

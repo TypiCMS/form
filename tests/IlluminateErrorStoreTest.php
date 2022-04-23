@@ -4,9 +4,13 @@ use Illuminate\Support\MessageBag;
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class IlluminateErrorStoreTest extends TestCase
 {
-    public function test_it_converts_array_keys_to_dot_notation()
+    public function testItConvertsArrayKeysToDotNotation()
     {
         $errors = new MessageBag(['foo.bar' => 'Some error']);
         $session = Mockery::mock('Illuminate\Session\Store');

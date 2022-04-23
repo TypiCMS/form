@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\File;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class FileTest extends TestCase
 {
     use InputContractTest;

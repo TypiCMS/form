@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Hidden;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class HiddenTest extends TestCase
 {
     use InputContractTest;

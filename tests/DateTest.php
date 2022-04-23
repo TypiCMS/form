@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Date;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class DateTest extends TestCase
 {
     use InputContractTest;

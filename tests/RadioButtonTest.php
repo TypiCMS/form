@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\RadioButton;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class RadioButtonTest extends TestCase
 {
     use InputContractTest;

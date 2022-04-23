@@ -4,6 +4,9 @@ namespace TypiCMS\Form\Elements;
 
 class RadioButton extends Checkbox
 {
+    /**
+     * @var array
+     */
     protected $attributes = [
         'type' => 'radio',
     ];

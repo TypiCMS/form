@@ -3,14 +3,18 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\FormBuilder;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class OldInputTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->form = new FormBuilder();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

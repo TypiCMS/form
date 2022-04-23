@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\DateTimeLocal;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class DateTimeLocalTest extends TestCase
 {
     use InputContractTest;

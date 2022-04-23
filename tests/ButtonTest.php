@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Button;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class ButtonTest extends TestCase
 {
     public function testButtonCanBeCreated()

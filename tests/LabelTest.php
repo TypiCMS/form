@@ -3,9 +3,13 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Label;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class LabelTest extends TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         Mockery::close();
     }

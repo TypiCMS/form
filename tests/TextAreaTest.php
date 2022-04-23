@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\TextArea;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class TextAreaTest extends TestCase
 {
     use InputContractTest;

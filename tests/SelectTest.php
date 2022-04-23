@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Select;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class SelectTest extends TestCase
 {
     use InputContractTest;

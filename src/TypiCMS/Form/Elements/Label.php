@@ -4,18 +4,27 @@ namespace TypiCMS\Form\Elements;
 
 class Label extends Element
 {
+    /**
+     * @var Element
+     */
     protected $element;
 
+    /**
+     * @var bool
+     */
     protected $labelBefore;
 
+    /**
+     * @var string
+     */
     protected $label;
 
-    public function __construct($label)
+    public function __construct(string $label)
     {
         $this->label = $label;
     }
 
-    public function render()
+    public function render(): string
     {
         $tags = [sprintf('<label%s>', $this->renderAttributes())];
 
@@ -34,14 +43,14 @@ class Label extends Element
         return implode($tags);
     }
 
-    public function forId($name)
+    public function forId($name): self
     {
         $this->setAttribute('for', $name);
 
         return $this;
     }
 
-    public function before(Element $element)
+    public function before(Element $element): self
     {
         $this->element = $element;
         $this->labelBefore = true;
@@ -49,7 +58,7 @@ class Label extends Element
         return $this;
     }
 
-    public function after(Element $element)
+    public function after(Element $element): self
     {
         $this->element = $element;
         $this->labelBefore = false;
@@ -57,7 +66,7 @@ class Label extends Element
         return $this;
     }
 
-    protected function renderElement()
+    protected function renderElement(): string
     {
         if (!$this->element) {
             return '';
@@ -66,7 +75,7 @@ class Label extends Element
         return $this->element->render();
     }
 
-    public function getControl()
+    public function getControl(): Element
     {
         return $this->element;
     }

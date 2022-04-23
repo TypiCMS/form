@@ -4,6 +4,9 @@ namespace TypiCMS\Form\Elements;
 
 class Checkbox extends Input
 {
+    /**
+     * @var array
+     */
     protected $attributes = [
         'type' => 'checkbox',
     ];
@@ -29,7 +32,7 @@ class Checkbox extends Input
         $this->oldValue = null;
     }
 
-    public function defaultToChecked()
+    public function defaultToChecked(): self
     {
         if (!isset($this->checked) && is_null($this->oldValue)) {
             $this->check();
@@ -38,7 +41,7 @@ class Checkbox extends Input
         return $this;
     }
 
-    public function defaultToUnchecked()
+    public function defaultToUnchecked(): self
     {
         if (!isset($this->checked) && is_null($this->oldValue)) {
             $this->uncheck();
@@ -47,14 +50,14 @@ class Checkbox extends Input
         return $this;
     }
 
-    public function defaultCheckedState($state)
+    public function defaultCheckedState($state): self
     {
         $state ? $this->defaultToChecked() : $this->defaultToUnchecked();
 
         return $this;
     }
 
-    public function check()
+    public function check(): self
     {
         $this->unsetOldValue();
         $this->setChecked(true);
@@ -62,7 +65,7 @@ class Checkbox extends Input
         return $this;
     }
 
-    public function uncheck()
+    public function uncheck(): self
     {
         $this->unsetOldValue();
         $this->setChecked(false);
@@ -93,7 +96,7 @@ class Checkbox extends Input
         }
     }
 
-    public function render()
+    public function render(): string
     {
         $this->checkBinding();
 

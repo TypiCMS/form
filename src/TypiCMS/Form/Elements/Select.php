@@ -4,36 +4,42 @@ namespace TypiCMS\Form\Elements;
 
 class Select extends FormControl
 {
+    /**
+     * @var array
+     */
     protected $options;
 
+    /**
+     * @var bool
+     */
     protected $selected;
 
-    public function __construct($name, $options = [])
+    public function __construct(string $name, array $options = [])
     {
         $this->setName($name);
         $this->setOptions($options);
     }
 
-    public function select($option)
+    public function select(mixed $option): self
     {
         $this->selected = $option;
 
         return $this;
     }
 
-    protected function setOptions($options)
+    protected function setOptions(array $options): void
     {
         $this->options = $options;
     }
 
-    public function options($options)
+    public function options(array $options): self
     {
         $this->setOptions($options);
 
         return $this;
     }
 
-    public function render()
+    public function render(): string
     {
         return implode([
             sprintf('<select%s>', $this->renderAttributes()),
@@ -42,7 +48,7 @@ class Select extends FormControl
         ]);
     }
 
-    protected function renderOptions()
+    protected function renderOptions(): string
     {
         list($values, $labels) = $this->splitKeysAndValues($this->options);
 
@@ -57,7 +63,7 @@ class Select extends FormControl
         return implode($tags);
     }
 
-    protected function renderOptGroup($label, $options)
+    protected function renderOptGroup(string $label, array $options): string
     {
         list($values, $labels) = $this->splitKeysAndValues($options);
 
@@ -72,7 +78,7 @@ class Select extends FormControl
         ]);
     }
 
-    protected function renderOption($value, $label)
+    protected function renderOption(string $value, string $label): string
     {
         return vsprintf('<option value="%s"%s>%s</option>', [
             $this->escape($value),
@@ -81,19 +87,19 @@ class Select extends FormControl
         ]);
     }
 
-    protected function isSelected($value)
+    protected function isSelected(string $value): bool
     {
         return in_array($value, (array) $this->selected);
     }
 
-    public function addOption($value, $label)
+    public function addOption(string $value, string $label): self
     {
         $this->options[$value] = $label;
 
         return $this;
     }
 
-    public function defaultValue($value)
+    public function defaultValue(string|array $value): self
     {
         if (isset($this->selected)) {
             return $this;
@@ -104,10 +110,10 @@ class Select extends FormControl
         return $this;
     }
 
-    public function multiple()
+    public function multiple(): self
     {
         $name = $this->attributes['name'];
-        if (substr($name, -2) != '[]') {
+        if (mb_substr($name, -2) != '[]') {
             $name .= '[]';
         }
 

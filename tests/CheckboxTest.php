@@ -3,6 +3,10 @@
 use PHPUnit\Framework\TestCase;
 use TypiCMS\Form\Elements\Checkbox;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class CheckboxTest extends TestCase
 {
     use InputContractTest;

@@ -29,24 +29,27 @@ class FormBuilder
 
     protected $csrfToken;
 
+    /**
+     * @var \TypiCMS\Form\Binding\BoundData
+     */
     protected $boundData;
 
-    public function setOldInputProvider(OldInputInterface $oldInputProvider)
+    public function setOldInputProvider(OldInputInterface $oldInputProvider): void
     {
         $this->oldInput = $oldInputProvider;
     }
 
-    public function setErrorStore(ErrorStoreInterface $errorStore)
+    public function setErrorStore(ErrorStoreInterface $errorStore): void
     {
         $this->errorStore = $errorStore;
     }
 
-    public function setToken($token)
+    public function setToken(string $token): void
     {
         $this->csrfToken = $token;
     }
 
-    public function open()
+    public function open(): FormOpen
     {
         $open = new FormOpen();
 
@@ -57,19 +60,19 @@ class FormBuilder
         return $open;
     }
 
-    protected function hasToken()
+    protected function hasToken(): bool
     {
         return isset($this->csrfToken);
     }
 
-    public function close()
+    public function close(): string
     {
         $this->unbindData();
 
         return '</form>';
     }
 
-    public function text($name)
+    public function text(string $name): Text
     {
         $text = new Text($name);
 
@@ -80,7 +83,7 @@ class FormBuilder
         return $text;
     }
 
-    public function number($name)
+    public function number(string $name): Number
     {
         $number = new Number($name);
 
@@ -91,7 +94,7 @@ class FormBuilder
         return $number;
     }
 
-    public function date($name)
+    public function date(string $name): Date
     {
         $date = new Date($name);
 
@@ -102,7 +105,7 @@ class FormBuilder
         return $date;
     }
 
-    public function dateTimeLocal($name)
+    public function dateTimeLocal(string $name): DateTimeLocal
     {
         $date = new DateTimeLocal($name);
 
@@ -113,7 +116,7 @@ class FormBuilder
         return $date;
     }
 
-    public function email($name)
+    public function email(string $name): Email
     {
         $email = new Email($name);
 
@@ -124,7 +127,7 @@ class FormBuilder
         return $email;
     }
 
-    public function hidden($name)
+    public function hidden(string $name): Hidden
     {
         $hidden = new Hidden($name);
 
@@ -135,7 +138,7 @@ class FormBuilder
         return $hidden;
     }
 
-    public function textarea($name)
+    public function textarea(string $name): TextArea
     {
         $textarea = new TextArea($name);
 
@@ -146,12 +149,12 @@ class FormBuilder
         return $textarea;
     }
 
-    public function password($name)
+    public function password(string $name): Password
     {
         return new Password($name);
     }
 
-    public function checkbox($name, $value = 1)
+    public function checkbox(string $name, $value = 1): Checkbox
     {
         $checkbox = new Checkbox($name, $value);
 
@@ -161,7 +164,7 @@ class FormBuilder
         return $checkbox;
     }
 
-    public function radio($name, $value = null)
+    public function radio(string $name, $value = null): RadioButton
     {
         $radio = new RadioButton($name, $value);
 
@@ -171,12 +174,12 @@ class FormBuilder
         return $radio;
     }
 
-    public function button($value, $name = null)
+    public function button(string $value, $name = null): Button
     {
         return new Button($value, $name);
     }
 
-    public function reset($value = 'Reset')
+    public function reset(string $value = 'Reset'): Button
     {
         $reset = new Button($value);
         $reset->attribute('type', 'reset');
@@ -184,7 +187,7 @@ class FormBuilder
         return $reset;
     }
 
-    public function submit($value = 'Submit')
+    public function submit(string $value = 'Submit'): Button
     {
         $submit = new Button($value);
         $submit->attribute('type', 'submit');
@@ -192,7 +195,7 @@ class FormBuilder
         return $submit;
     }
 
-    public function select($name, $options = [])
+    public function select(string $name, array $options = []): Select
     {
         $select = new Select($name, $options);
 
@@ -202,17 +205,17 @@ class FormBuilder
         return $select;
     }
 
-    public function label($label)
+    public function label(string $label): Label
     {
         return new Label($label);
     }
 
-    public function file($name)
+    public function file(string $name): File
     {
         return new File($name);
     }
 
-    public function token()
+    public function token(): Hidden
     {
         $token = $this->hidden('_token');
 
@@ -223,7 +226,7 @@ class FormBuilder
         return $token;
     }
 
-    public function hasError($name)
+    public function hasError($name): bool
     {
         if (!isset($this->errorStore)) {
             return false;
@@ -232,10 +235,10 @@ class FormBuilder
         return $this->errorStore->hasError($name);
     }
 
-    public function getError($name, $format = null)
+    public function getError(string $name, ?string $format = null): ?string
     {
         if (!isset($this->errorStore)) {
-            return;
+            return null;
         }
 
         if (!$this->hasError($name)) {
@@ -251,12 +254,12 @@ class FormBuilder
         return $message;
     }
 
-    public function bind($data)
+    public function bind($data): void
     {
         $this->boundData = new BoundData($data);
     }
 
-    public function getValueFor($name)
+    public function getValueFor(string $name)
     {
         if ($this->hasOldInput()) {
             return $this->getOldInput($name);
@@ -267,7 +270,7 @@ class FormBuilder
         }
     }
 
-    protected function hasOldInput()
+    protected function hasOldInput(): bool
     {
         if (!isset($this->oldInput)) {
             return false;
@@ -276,22 +279,22 @@ class FormBuilder
         return $this->oldInput->hasOldInput();
     }
 
-    protected function getOldInput($name)
+    protected function getOldInput($name): array|string
     {
         return $this->oldInput->getOldInput($name);
     }
 
-    protected function hasBoundData()
+    protected function hasBoundData(): bool
     {
         return isset($this->boundData);
     }
 
-    protected function getBoundValue($name, $default)
+    protected function getBoundValue(string $name, $default): mixed
     {
         return $this->boundData->get($name, $default);
     }
 
-    protected function unbindData()
+    protected function unbindData(): void
     {
         $this->boundData = null;
     }

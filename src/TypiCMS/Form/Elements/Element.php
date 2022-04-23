@@ -25,7 +25,7 @@ abstract class Element
         return $this->attributes[$attribute];
     }
 
-    public function data($attribute, $value = null)
+    public function data($attribute, $value = null): self
     {
         if (is_array($attribute)) {
             foreach ($attribute as $key => $val) {
@@ -38,14 +38,14 @@ abstract class Element
         return $this;
     }
 
-    public function attribute($attribute, $value)
+    public function attribute($attribute, $value): self
     {
         $this->setAttribute($attribute, $value);
 
         return $this;
     }
 
-    public function clear($attribute)
+    public function clear($attribute): self
     {
         if (!isset($this->attributes[$attribute])) {
             return $this;
@@ -56,7 +56,7 @@ abstract class Element
         return $this;
     }
 
-    public function addClass($class)
+    public function addClass($class): self
     {
         if (isset($this->attributes['class'])) {
             $class = $this->attributes['class'].' '.$class;
@@ -67,7 +67,7 @@ abstract class Element
         return $this;
     }
 
-    public function removeClass($class)
+    public function removeClass($class): self
     {
         if (!isset($this->attributes['class'])) {
             return $this;
@@ -85,26 +85,26 @@ abstract class Element
         return $this;
     }
 
-    public function id($id)
+    public function id($id): self
     {
         $this->setId($id);
 
         return $this;
     }
 
-    protected function setId($id)
+    protected function setId($id): void
     {
         $this->setAttribute('id', $id);
     }
 
     abstract public function render();
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->render();
     }
 
-    protected function renderAttributes()
+    protected function renderAttributes(): string
     {
         list($attributes, $values) = $this->splitKeysAndValues($this->attributes);
 
@@ -113,7 +113,7 @@ abstract class Element
         }, $attributes, $values));
     }
 
-    protected function splitKeysAndValues($array)
+    protected function splitKeysAndValues($array): array
     {
         // Disgusting crap because people might have passed a collection
         $keys = [];
@@ -127,7 +127,7 @@ abstract class Element
         return [$keys, $values];
     }
 
-    protected function setBooleanAttribute($attribute, $value)
+    protected function setBooleanAttribute($attribute, $value): void
     {
         if ($value) {
             $this->setAttribute($attribute, $attribute);
@@ -136,12 +136,16 @@ abstract class Element
         }
     }
 
-    protected function escape($value)
+    protected function escape(?string $value): string
     {
+        if (is_null($value)) {
+            $value = '';
+        }
+
         return htmlentities($value, ENT_QUOTES, 'UTF-8');
     }
 
-    public function __call($method, $params)
+    public function __call($method, $params): self
     {
         $params = count($params) ? $params : [$method];
         $params = array_merge([$method], $params);

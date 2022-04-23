@@ -4,39 +4,42 @@ namespace TypiCMS\Form\Elements;
 
 class Number extends Input
 {
+    /**
+     * @var array
+     */
     protected $attributes = [
         'type' => 'number',
     ];
 
-    public function placeholder($placeholder)
+    public function placeholder($placeholder): self
     {
         $this->setAttribute('placeholder', $placeholder);
 
         return $this;
     }
 
-    public function max($max)
+    public function max($max): self
     {
         $this->setAttribute('max', $max);
 
         return $this;
     }
 
-    public function min($min)
+    public function min($min): self
     {
         $this->setAttribute('min', $min);
 
         return $this;
     }
 
-    public function step($step)
+    public function step($step): self
     {
         $this->setAttribute('step', $step);
 
         return $this;
     }
 
-    public function defaultValue($value)
+    public function defaultValue($value): self
     {
         if (!$this->hasValue()) {
             $this->setValue($value);
@@ -45,7 +48,7 @@ class Number extends Input
         return $this;
     }
 
-    protected function hasValue()
+    protected function hasValue(): bool
     {
         return isset($this->attributes['value']);
     }

@@ -6,6 +6,9 @@ use Illuminate\Session\Store as Session;
 
 class IlluminateOldInputProvider implements OldInputInterface
 {
+    /**
+     * @var Session
+     */
     private $session;
 
     public function __construct(Session $session)
@@ -13,12 +16,12 @@ class IlluminateOldInputProvider implements OldInputInterface
         $this->session = $session;
     }
 
-    public function hasOldInput()
+    public function hasOldInput(): bool
     {
         return ($this->session->get('_old_input')) ? true : false;
     }
 
-    public function getOldInput($key)
+    public function getOldInput($key): string
     {
         return $this->session->getOldInput($this->transformKey($key));
     }

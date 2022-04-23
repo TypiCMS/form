@@ -4,16 +4,25 @@ namespace TypiCMS\Form\Elements;
 
 class FormOpen extends Element
 {
+    /**
+     * @var array
+     */
     protected $attributes = [
         'method' => 'POST',
         'action' => '',
     ];
 
+    /**
+     * @var Hidden
+     */
     protected $token;
 
+    /**
+     * @var Hidden
+     */
     protected $hiddenMethod;
 
-    public function render()
+    public function render(): string
     {
         $tags = [sprintf('<form%s>', $this->renderAttributes())];
 
@@ -28,46 +37,46 @@ class FormOpen extends Element
         return implode($tags);
     }
 
-    protected function hasToken()
+    protected function hasToken(): bool
     {
         return isset($this->token);
     }
 
-    protected function hasHiddenMethod()
+    protected function hasHiddenMethod(): bool
     {
         return isset($this->hiddenMethod);
     }
 
-    public function post()
+    public function post(): self
     {
         $this->setMethod('POST');
 
         return $this;
     }
 
-    public function get()
+    public function get(): self
     {
         $this->setMethod('GET');
 
         return $this;
     }
 
-    public function put()
+    public function put(): self
     {
         return $this->setHiddenMethod('PUT');
     }
 
-    public function patch()
+    public function patch(): self
     {
         return $this->setHiddenMethod('PATCH');
     }
 
-    public function delete()
+    public function delete(): self
     {
         return $this->setHiddenMethod('DELETE');
     }
 
-    public function token($token)
+    public function token(string $token): self
     {
         $this->token = new Hidden('_token');
         $this->token->value($token);
@@ -75,7 +84,7 @@ class FormOpen extends Element
         return $this;
     }
 
-    protected function setHiddenMethod($method)
+    protected function setHiddenMethod($method): self
     {
         $this->setMethod('POST');
         $this->hiddenMethod = new Hidden('_method');
@@ -84,28 +93,28 @@ class FormOpen extends Element
         return $this;
     }
 
-    public function setMethod($method)
+    public function setMethod($method): self
     {
         $this->setAttribute('method', $method);
 
         return $this;
     }
 
-    public function action($action)
+    public function action($action): self
     {
         $this->setAttribute('action', $action);
 
         return $this;
     }
 
-    public function encodingType($type)
+    public function encodingType($type): self
     {
         $this->setAttribute('enctype', $type);
 
         return $this;
     }
 
-    public function multipart()
+    public function multipart(): self
     {
         return $this->encodingType('multipart/form-data');
     }
