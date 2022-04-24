@@ -14,24 +14,24 @@ class BoundData
         $this->data = $data;
     }
 
-    public function get(string $name, $default = null)
+    public function get(string $name, mixed $default = null): mixed
     {
         return $this->dotGet($this->transformKey($name), $default);
     }
 
-    public function data()
+    public function data(): mixed
     {
         return $this->data;
     }
 
-    protected function dotGet($dotKey, $default)
+    protected function dotGet(string $dotKey, mixed $default): mixed
     {
         $keyParts = explode('.', $dotKey);
 
         return $this->dataGet($this->data, $keyParts, $default);
     }
 
-    protected function dataGet($target, $keyParts, $default)
+    protected function dataGet(mixed $target, array $keyParts, mixed $default): mixed
     {
         if (count($keyParts) == 0) {
             return $target;
@@ -48,7 +48,7 @@ class BoundData
         return $default;
     }
 
-    protected function arrayGet($target, $keyParts, $default)
+    protected function arrayGet(mixed $target, array $keyParts, mixed $default): mixed
     {
         $key = array_shift($keyParts);
 
@@ -59,7 +59,7 @@ class BoundData
         return $this->dataGet($target[$key], $keyParts, $default);
     }
 
-    protected function objectGet($target, $keyParts, $default)
+    protected function objectGet(mixed $target, array $keyParts, mixed $default): mixed
     {
         $key = array_shift($keyParts);
 
@@ -70,7 +70,7 @@ class BoundData
         return $this->dataGet($target->{$key}, $keyParts, $default);
     }
 
-    protected function transformKey(string $key)
+    protected function transformKey(string $key): string
     {
         return str_replace(['[]', '[', ']'], ['', '.', ''], $key);
     }
