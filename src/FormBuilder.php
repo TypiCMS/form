@@ -288,7 +288,7 @@ class FormBuilder
         return $this->oldInput->hasOldInput();
     }
 
-    protected function getOldInput(string $name): array|string
+    protected function getOldInput(string $name): mixed
     {
         return $this->oldInput->getOldInput($name);
     }

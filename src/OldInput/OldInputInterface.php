@@ -6,5 +6,5 @@ interface OldInputInterface
 {
     public function hasOldInput(): bool;
 
-    public function getOldInput(string $key): array|string;
+    public function getOldInput(string $key): mixed;
 }
