@@ -30,7 +30,7 @@ jobs:
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress
 
       - name: Execute tests
-        run: vendor/bin/phpunit
+        run: vendor/bin/phpunit --coverage-clover coverage.xml
 
       - name: Codecov
         uses: codecov/codecov-action@v2
