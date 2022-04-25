@@ -23,7 +23,16 @@
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
-    <logging>
-        <log type="coverage-clover" target="clover.xml"/>
-    </logging>
+    <filter>
+        <blacklist>
+            <directory suffix=".php">.</directory>
+        </blacklist>
+        <whitelist>
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <file>./src/FormServiceProvider.php</file>
+                <file>./src/Facades/Form.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
