@@ -6,10 +6,7 @@ use Illuminate\Session\Store as Session;
 
 class IlluminateOldInputProvider implements OldInputInterface
 {
-    /**
-     * @var Session
-     */
-    private $session;
+    private Session $session;
 
     public function __construct(Session $session)
     {

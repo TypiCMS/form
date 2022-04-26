@@ -4,15 +4,9 @@ namespace TypiCMS\Form\Elements;
 
 class Select extends FormControl
 {
-    /**
-     * @var array
-     */
-    protected $options;
+    protected array $options;
 
-    /**
-     * @var ?bool
-     */
-    protected $selected;
+    protected mixed $selected = null;
 
     public function __construct(string $name, array $options = [])
     {

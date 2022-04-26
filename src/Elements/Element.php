@@ -4,10 +4,7 @@ namespace TypiCMS\Form\Elements;
 
 abstract class Element
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [];
+    protected array $attributes = [];
 
     protected function setAttribute(string $attribute, mixed $value = null): void
     {

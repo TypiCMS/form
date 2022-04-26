@@ -4,22 +4,13 @@ namespace TypiCMS\Form\Elements;
 
 class Checkbox extends Input
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'type' => 'checkbox',
     ];
 
-    /**
-     * @var ?bool
-     */
-    protected $checked;
+    protected ?bool $checked;
 
-    /**
-     * @var mixed
-     */
-    protected $oldValue;
+    protected mixed $oldValue = null;
 
     public function __construct(string $name, mixed $value = 1)
     {

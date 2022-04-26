@@ -4,17 +4,11 @@ namespace TypiCMS\Form\Elements;
 
 class Button extends FormControl
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'type' => 'button',
     ];
 
-    /**
-     * @var string
-     */
-    protected $value;
+    protected string $value;
 
     public function __construct(string $value, ?string $name = null)
     {

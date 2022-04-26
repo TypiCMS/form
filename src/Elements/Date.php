@@ -4,10 +4,7 @@ namespace TypiCMS\Form\Elements;
 
 class Date extends Text
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'type' => 'date',
     ];
 

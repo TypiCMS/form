@@ -4,10 +4,7 @@ namespace TypiCMS\Form\Elements;
 
 class DateTimeLocal extends Text
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'type' => 'datetime-local',
     ];
 

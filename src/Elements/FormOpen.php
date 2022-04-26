@@ -4,23 +4,14 @@ namespace TypiCMS\Form\Elements;
 
 class FormOpen extends Element
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'method' => 'POST',
         'action' => '',
     ];
 
-    /**
-     * @var ?Hidden
-     */
-    protected $token;
+    protected ?Hidden $token;
 
-    /**
-     * @var ?Hidden
-     */
-    protected $hiddenMethod;
+    protected ?Hidden $hiddenMethod;
 
     public function render(): string
     {

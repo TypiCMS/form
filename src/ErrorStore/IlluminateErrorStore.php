@@ -6,10 +6,7 @@ use Illuminate\Session\Store as Session;
 
 class IlluminateErrorStore implements ErrorStoreInterface
 {
-    /**
-     * @var Session
-     */
-    private $session;
+    private Session $session;
 
     public function __construct(Session $session)
     {

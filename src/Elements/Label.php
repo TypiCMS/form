@@ -4,20 +4,11 @@ namespace TypiCMS\Form\Elements;
 
 class Label extends Element
 {
-    /**
-     * @var ?Element
-     */
-    protected $element;
+    protected ?Element $element = null;
 
-    /**
-     * @var bool
-     */
-    protected $labelBefore;
+    protected ?bool $labelBefore = null;
 
-    /**
-     * @var string
-     */
-    protected $label;
+    protected string $label;
 
     public function __construct(string $label)
     {

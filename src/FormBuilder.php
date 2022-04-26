@@ -23,25 +23,13 @@ use TypiCMS\Form\OldInput\OldInputInterface;
 
 class FormBuilder
 {
-    /**
-     * @var ?OldInputInterface
-     */
-    protected $oldInput;
+    protected ?OldInputInterface $oldInput;
 
-    /**
-     * @var ?ErrorStoreInterface
-     */
-    protected $errorStore;
+    protected ?ErrorStoreInterface $errorStore;
 
-    /**
-     * @var ?string
-     */
-    protected $csrfToken;
+    protected ?string $csrfToken;
 
-    /**
-     * @var ?\TypiCMS\Form\Binding\BoundData
-     */
-    protected $boundData;
+    protected ?BoundData $boundData;
 
     public function setOldInputProvider(OldInputInterface $oldInputProvider): void
     {

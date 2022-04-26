@@ -4,19 +4,13 @@ namespace TypiCMS\Form\Elements;
 
 class TextArea extends FormControl
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'name' => '',
         'rows' => 10,
         'cols' => 50,
     ];
 
-    /**
-     * @var ?string
-     */
-    protected $value;
+    protected ?string $value = null;
 
     public function render(): string
     {

@@ -4,10 +4,7 @@ namespace TypiCMS\Form\Elements;
 
 class Hidden extends Input
 {
-    /**
-     * @var array
-     */
-    protected $attributes = [
+    protected array $attributes = [
         'type' => 'hidden',
     ];
 }
