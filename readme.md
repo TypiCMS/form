@@ -2,7 +2,6 @@
 
 [![Actions Status](https://github.com/TypiCMS/form/workflows/run-tests/badge.svg)](https://github.com/TypiCMS/form/actions)
 [![Coverage Status](https://coveralls.io/repos/github/TypiCMS/form/badge.svg?branch=master)](https://coveralls.io/github/TypiCMS/form?branch=master)
-[![StyleCI](https://styleci.io/repos/132716028/shield?branch=master)](https://styleci.io/repos/132716028)
 
 Build HTML form with an intuitive syntax.
 
