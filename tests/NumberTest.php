@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Number;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class NumberTest extends TestCase

@@ -8,6 +8,7 @@ use TypiCMS\Form\Elements\Date;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class DateTest extends TestCase

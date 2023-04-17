@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Text;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class TextTest extends TestCase

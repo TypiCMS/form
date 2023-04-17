@@ -10,7 +10,7 @@ trait InputContractTest
 
     protected function elementRegExp($attributes)
     {
-        return '/\A<input type="'.$this->getTestSubjectType().'" .*?'.$attributes.'( .*?|)>\z/';
+        return '/\A<input type="' . $this->getTestSubjectType() . '" .*?' . $attributes . '( .*?|)>\z/';
     }
 
     public function testTextCanBeCreated()

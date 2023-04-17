@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Password;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class PasswordTest extends TestCase

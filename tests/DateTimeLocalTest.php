@@ -8,6 +8,7 @@ use TypiCMS\Form\Elements\DateTimeLocal;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class DateTimeLocalTest extends TestCase

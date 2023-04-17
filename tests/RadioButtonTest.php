@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\RadioButton;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class RadioButtonTest extends TestCase

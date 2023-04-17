@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Select;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class SelectTest extends TestCase
@@ -24,7 +25,7 @@ class SelectTest extends TestCase
 
     protected function elementRegExp($attributes)
     {
-        return '/\A<select .*?'.$attributes.'( .*?|)><\/select>\z/';
+        return '/\A<select .*?' . $attributes . '( .*?|)><\/select>\z/';
     }
 
     public function testSelectCanBeCreatedWithOptions()

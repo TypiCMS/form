@@ -29,10 +29,10 @@ abstract class Element
     {
         if (is_array($attribute)) {
             foreach ($attribute as $key => $val) {
-                $this->setAttribute('data-'.$key, $val);
+                $this->setAttribute('data-' . $key, $val);
             }
         } else {
-            $this->setAttribute('data-'.$attribute, $value);
+            $this->setAttribute('data-' . $attribute, $value);
         }
 
         return $this;
@@ -59,7 +59,7 @@ abstract class Element
     public function addClass(string $class): self
     {
         if (isset($this->attributes['class'])) {
-            $class = $this->attributes['class'].' '.$class;
+            $class = $this->attributes['class'] . ' ' . $class;
         }
 
         $this->setAttribute('class', $class);
@@ -106,7 +106,7 @@ abstract class Element
 
     protected function renderAttributes(): string
     {
-        list($attributes, $values) = $this->splitKeysAndValues($this->attributes);
+        [$attributes, $values] = $this->splitKeysAndValues($this->attributes);
 
         return implode(array_map(function ($attribute, $value) {
             return sprintf(' %s="%s"', $attribute, $this->escape($value));

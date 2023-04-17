@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\File;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class FileTest extends TestCase

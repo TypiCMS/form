@@ -9,6 +9,7 @@ use TypiCMS\Form\ErrorStore\IlluminateErrorStore;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class IlluminateErrorStoreTest extends TestCase

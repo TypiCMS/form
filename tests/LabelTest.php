@@ -8,6 +8,7 @@ use TypiCMS\Form\Elements\Label;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class LabelTest extends TestCase

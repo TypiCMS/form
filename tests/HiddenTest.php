@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Hidden;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class HiddenTest extends TestCase

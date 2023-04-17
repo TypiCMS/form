@@ -2,6 +2,7 @@
 
 namespace TypiCMS\Form\Tests;
 
+use DateTime;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -9,6 +10,7 @@ use TypiCMS\Form\FormBuilder;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class BindingTest extends TestCase
@@ -461,8 +463,8 @@ class BindingTest extends TestCase
         $obj->email = 'johndoe@example.com';
         $obj->first_name = 'John';
         $obj->last_name = 'Doe';
-        $obj->date_of_birth = new \DateTime('1985-05-06');
-        $obj->date_and_time_of_birth = new \DateTime('1985-05-06 16:39');
+        $obj->date_of_birth = new DateTime('1985-05-06');
+        $obj->date_and_time_of_birth = new DateTime('1985-05-06 16:39');
         $obj->gender = 'male';
         $obj->terms = 'agree';
         $obj->color = 'green';

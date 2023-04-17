@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Checkbox;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class CheckboxTest extends TestCase

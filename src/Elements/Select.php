@@ -44,7 +44,7 @@ class Select extends FormControl
 
     protected function renderOptions(): string
     {
-        list($values, $labels) = $this->splitKeysAndValues($this->options);
+        [$values, $labels] = $this->splitKeysAndValues($this->options);
 
         $tags = array_map(function ($value, $label) {
             if (is_array($label)) {
@@ -59,7 +59,7 @@ class Select extends FormControl
 
     protected function renderOptGroup(string $label, array $options): string
     {
-        list($values, $labels) = $this->splitKeysAndValues($options);
+        [$values, $labels] = $this->splitKeysAndValues($options);
 
         $options = array_map(function ($value, $label) {
             return $this->renderOption($value, $label);

@@ -2,6 +2,8 @@
 
 namespace TypiCMS\Form\Elements;
 
+use DateTime;
+
 class Date extends Text
 {
     protected array $attributes = [
@@ -10,7 +12,7 @@ class Date extends Text
 
     public function value(mixed $value): Input
     {
-        if ($value instanceof \DateTime) {
+        if ($value instanceof DateTime) {
             $value = $value->format('Y-m-d');
         }
 
@@ -20,7 +22,7 @@ class Date extends Text
     public function defaultValue(mixed $value): self
     {
         if (!$this->hasValue()) {
-            if ($value instanceof \DateTime) {
+            if ($value instanceof DateTime) {
                 $value = $value->format('Y-m-d');
             }
             $this->setValue($value);

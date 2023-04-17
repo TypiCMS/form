@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Button;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class ButtonTest extends TestCase

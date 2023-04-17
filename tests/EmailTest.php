@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\Email;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class EmailTest extends TestCase

@@ -7,6 +7,7 @@ use TypiCMS\Form\Elements\TextArea;
 
 /**
  * @internal
+ *
  * @coversNothing
  */
 class TextAreaTest extends TestCase
@@ -24,7 +25,7 @@ class TextAreaTest extends TestCase
 
     protected function elementRegExp($attributes)
     {
-        return '/\A<textarea .*?'.$attributes.'( .*?|)><\/textarea>\z/';
+        return '/\A<textarea .*?' . $attributes . '( .*?|)><\/textarea>\z/';
     }
 
     public function testRenderBasicTextArea()
