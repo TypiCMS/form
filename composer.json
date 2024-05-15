@@ -39,7 +39,10 @@
         "laravel": {
             "providers": [
                 "TypiCMS\\Form\\FormServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Form": "TypiCMS\\Form\\Facades\\Form"
+            }
         }
     }
 }
